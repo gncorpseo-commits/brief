@@ -3,19 +3,42 @@ const state = {
   jobs: new Map(),
   selectedId: null,
   tab: "summary",
+  view: "browse",
+  lastJobId: null,
+  refsBase: "../",
+  apiBase: "",
 };
 
 const $ = (sel) => document.querySelector(sel);
 
+async function detectBases() {
+  // Prefer Brief API if available
+  try {
+    const r = await fetch("/api/health", { cache: "no-store" });
+    if (r.ok) {
+      const h = await r.json();
+      state.apiBase = "";
+      state.refsBase = "/refs/";
+      $("#health").textContent = h.ollama ? "API · Ollama ON" : "API · heuristic";
+      $("#health").className = "health " + (h.ollama ? "on" : "off");
+      return;
+    }
+  } catch (_) {}
+  state.apiBase = null;
+  state.refsBase = "../";
+  $("#health").textContent = "정적 모드 (structure는 API 필요)";
+  $("#health").className = "health off";
+}
+
 async function loadIndex() {
-  const res = await fetch("../index.json", { cache: "no-store" });
+  const res = await fetch(`${state.refsBase}index.json`, { cache: "no-store" });
   if (!res.ok) throw new Error(`index.json 로드 실패 (${res.status})`);
   return res.json();
 }
 
 async function loadJob(file) {
   if (state.jobs.has(file)) return state.jobs.get(file);
-  const res = await fetch(`../${file}`, { cache: "no-store" });
+  const res = await fetch(`${state.refsBase}${file}`, { cache: "no-store" });
   if (!res.ok) throw new Error(`${file} 로드 실패 (${res.status})`);
   const data = await res.json();
   state.jobs.set(file, data);
@@ -80,6 +103,7 @@ function renderDetail(job, item) {
       <div class="links">
         ${url ? `<a href="${escapeAttr(url)}" target="_blank" rel="noopener">공고 페이지 열기</a>` : ""}
         ${applyUrl && applyUrl !== url ? `<a href="${escapeAttr(applyUrl)}" target="_blank" rel="noopener">지원/관련 링크</a>` : ""}
+        <button type="button" class="linkish" id="use-in-work">이 원문으로 구조화 탭</button>
         <span class="chip kind-${escapeHtml(item.kind)}">${escapeHtml(item.kind)}</span>
       </div>
     </article>
@@ -129,6 +153,23 @@ function renderDetail(job, item) {
       });
     });
   });
+
+  const useBtn = detail.querySelector("#use-in-work");
+  if (useBtn) {
+    useBtn.addEventListener("click", () => {
+      $("#work-url").value = url || "";
+      $("#work-text").value = job.job_text || "";
+      setView("work");
+    });
+  }
+}
+
+function setView(name) {
+  state.view = name;
+  $("#view-browse").hidden = name !== "browse";
+  $("#view-work").hidden = name !== "work";
+  $("#tab-browse").classList.toggle("active", name === "browse");
+  $("#tab-work").classList.toggle("active", name === "work");
 }
 
 function stat(k, v) {
@@ -185,17 +226,115 @@ function escapeAttr(s) {
   return escapeHtml(s).replaceAll("'", "&#39;");
 }
 
+function requireApi() {
+  if (state.apiBase === null) {
+    throw new Error("Brief API가 필요합니다. scripts/serve-brief.ps1 로 서버를 띄우세요.");
+  }
+}
+
+async function doStructure() {
+  requireApi();
+  const raw_text = $("#work-text").value.trim();
+  const url = $("#work-url").value.trim();
+  if (raw_text.length < 20) throw new Error("원문 20자 이상 필요");
+  $("#work-status").textContent = "구조화 중…";
+  $("#btn-structure").disabled = true;
+  try {
+    const r = await fetch("/api/structure", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        raw_text,
+        url,
+        heuristic: $("#work-heuristic").checked,
+        save: true,
+      }),
+    });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.detail || JSON.stringify(data));
+    state.lastJobId = data.job.id;
+    $("#btn-draft").disabled = false;
+    $("#btn-apply").disabled = true;
+    $("#work-status").textContent = `OK · engine=${data.engine} · id=${data.job.id}`;
+    $("#work-out").textContent = JSON.stringify(data.job, null, 2);
+    // refresh index if possible
+    try {
+      state.index = await loadIndex();
+      renderList();
+    } catch (_) {}
+  } finally {
+    $("#btn-structure").disabled = false;
+  }
+}
+
+async function doDraft() {
+  requireApi();
+  if (!state.lastJobId) throw new Error("먼저 구조화하세요");
+  $("#work-status").textContent = "초안 생성 중…";
+  $("#btn-draft").disabled = true;
+  try {
+    const r = await fetch("/api/draft", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ job_id: state.lastJobId, save: true }),
+    });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.detail || JSON.stringify(data));
+    $("#btn-apply").disabled = false;
+    $("#work-status").textContent = `draft OK · engine=${data.engine} · pending_approval`;
+    $("#work-out").textContent = JSON.stringify(data.package, null, 2);
+  } finally {
+    $("#btn-draft").disabled = false;
+  }
+}
+
+async function doApply() {
+  requireApi();
+  if (!state.lastJobId) throw new Error("job_id 없음");
+  const ok = confirm("이 공고 지원을 승인할까요? (클립보드/파일 기록, 무인 대량 전송 없음)");
+  if (!ok) return;
+  $("#work-status").textContent = "지원 기록 중…";
+  const r = await fetch("/api/apply", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ job_id: state.lastJobId, approved: true }),
+  });
+  const data = await r.json();
+  if (!r.ok) throw new Error(data.detail || JSON.stringify(data));
+  $("#work-status").textContent = `apply: ${data.submit?.status || "ok"}`;
+  $("#work-out").textContent = JSON.stringify(data, null, 2);
+}
+
 async function boot() {
   try {
+    await detectBases();
     state.index = await loadIndex();
     renderList();
     $("#q").addEventListener("input", renderList);
     $("#kind").addEventListener("change", renderList);
+    $("#tab-browse").addEventListener("click", () => setView("browse"));
+    $("#tab-work").addEventListener("click", () => setView("work"));
+    $("#btn-structure").addEventListener("click", () =>
+      doStructure().catch((e) => {
+        $("#work-status").textContent = e.message;
+        $("#work-out").textContent = e.message;
+      })
+    );
+    $("#btn-draft").addEventListener("click", () =>
+      doDraft().catch((e) => {
+        $("#work-status").textContent = e.message;
+      })
+    );
+    $("#btn-apply").addEventListener("click", () =>
+      doApply().catch((e) => {
+        $("#work-status").textContent = e.message;
+      })
+    );
     const first = filteredItems()[0];
     if (first) selectJob(first);
   } catch (err) {
     $("#meta").textContent = "오류";
-    $("#detail").innerHTML = `<div class="error">${escapeHtml(err.message)}<br/><br/>로컬에서는 <code>scripts/serve-job-refs.ps1</code> 로 서버를 띄운 뒤 <code>/ui/</code> 로 접속하세요. 파일 직접 열기(file://)는 fetch가 막힐 수 있습니다.</div>`;
+    $("#detail").innerHTML = `<div class="error">${escapeHtml(err.message)}<br/><br/><code>scripts/serve-brief.ps1</code> 권장 (API+UI). 정적만 쓰려면 <code>serve-job-refs.ps1</code>.</div>`;
   }
 }
 

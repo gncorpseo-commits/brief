@@ -14,11 +14,13 @@
 ## Phase 1 — JobRef 구조화
 - [x] `brief structure` (Ollama JSON or heuristic fallback)
 - [x] save to `data/jobs` + optional refs/index
-- [~] golden regression harness (use refs manually for now)
+- [x] golden regression: `pytest -q` (`tests/test_golden_structure.py`)
+- [x] UI structure tab + `POST /api/structure`
 
 ## Phase 2 — 지원 초안 + 승인형 지원
 - [x] `brief draft`
 - [x] `brief apply --yes` (clipboard/file; no silent mass send)
+- [x] UI draft/apply buttons + `/api/draft` `/api/apply`
 - [~] SMTP real send (recorded mailto/file only)
 
 ## Phase 3 — scout
@@ -43,8 +45,9 @@
 
 ## Quick start
 ```powershell
-pip install -e .
+pip install -e ".[dev]"
 brief demo
-brief version
+pytest -q
+powershell -File scripts/serve-brief.ps1
 ```
-Ollama (optional): install + `ollama pull qwen2.5:7b` then set `OLLAMA_MODEL`.
+Ollama: [`docs/ops/ollama-windows.md`](ops/ollama-windows.md)

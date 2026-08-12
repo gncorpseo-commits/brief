@@ -6,11 +6,13 @@
 ## UI로 보기
 
 ```powershell
-# 저장소 루트에서
+# API + 구조화·초안 탭 (권장)
+powershell -ExecutionPolicy Bypass -File scripts/serve-brief.ps1
+# http://127.0.0.1:8765/ui/
+
+# 목록만 (정적)
 powershell -ExecutionPolicy Bypass -File scripts/serve-job-refs.ps1
 ```
-
-브라우저에서 http://127.0.0.1:8765/ui/ 를 연다.
 
 ## 규칙
 
