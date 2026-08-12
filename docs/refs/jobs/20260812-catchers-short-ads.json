@@ -1,0 +1,32 @@
+{
+  "id": "20260812-catchers-short-ads",
+  "collected_at": "2026-08-12",
+  "source": {
+    "name": "filmmakers",
+    "url": "https://www.filmmakers.co.kr/proCrewRecruiting/27545514",
+    "accessed_at": "2026-08-12"
+  },
+  "title": "(주)캐처스 숏폼 광고 영상 편집 및 기획 파트너",
+  "remote": true,
+  "pay": "편집 건당 약 20,000원 / 기획 건당 약 50,000원 (공고 기준)",
+  "duties": [
+    "뷰티 바이럴 숏폼 30~60초: 컷·자막·BGM/효과음·TTS·템플릿·모자이크",
+    "제공: 인플루언서 셀프캠 원본 + 텍스트 콘티",
+    "(별도) 셀프캠용 기획안·스토리보드"
+  ],
+  "requirements": [
+    "주 최소 편집 4~5건 등 물량 조건(공고 기준)",
+    "재택, 마감 내 자율"
+  ],
+  "job_text": "광고 영상 편집: 뷰티 바이럴 숏폼 제작(30~60초). 컷 편집, 자막, BGM/효과음, TTS, 템플릿, 모자이크. 광고 기획물은 PPT/스토리보드로 별도 단가.",
+  "mapped_task_ids": [
+    "video_short",
+    "video_caption",
+    "video_template",
+    "content_draft",
+    "research_summary"
+  ],
+  "automation_notes": "TTS·자막·템플릿 슬롯은 반자동 후보. 기획/스토리보드는 LLM 초안 가능하나 단가·책임이 달라 human_gate 필수.",
+  "impl_difficulty_hint": 3,
+  "tags": ["video", "ads", "tts", "planning"]
+}

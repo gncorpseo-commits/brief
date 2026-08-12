@@ -1,0 +1,35 @@
+{
+  "id": "20260812-albamon-remote-cs-pattern",
+  "collected_at": "2026-08-12",
+  "source": {
+    "name": "albamon",
+    "url": "https://www.albamon.com/jobs/telecommuting",
+    "accessed_at": "2026-08-12",
+    "note": "단일 공고가 아니라 재택 목록에 반복 노출된 CS·게시판형 유형 합성 레퍼런스."
+  },
+  "title": "재택 CS / 쇼핑몰·쿠팡 게시판 상담 (유형 레퍼런스)",
+  "remote": true,
+  "pay": "시급·고정급·인센티브 혼재 (공고별)",
+  "duties": [
+    "상품문의·게시판 고객문의 답변",
+    "주문·배송 확인 인바운드/안내",
+    "홈쇼핑·고객센터 주문접수(일부)",
+    "시간선택·바로재택 형태 다수"
+  ],
+  "requirements": [
+    "안정적 인터넷·PC",
+    "타이핑·응대 (공고별)",
+    "교육 후 투입 흔함"
+  ],
+  "job_text": "알바몬 재택 목록에서 반복되는 유형: 쇼핑몰 게시판 관리, 쿠팡 상품문의 게시판 답변, 주문/배송 확인 인바운드, 홈쇼핑 고객센터 주문접수, TCK 쿠팡 게시판·전화상담 등. 텍스트 게시판 답변과 주문 상태 안내가 핵심.",
+  "mapped_task_ids": [
+    "board_manage",
+    "chat_reply",
+    "order_process",
+    "phone_assist",
+    "email_reply"
+  ],
+  "automation_notes": "reply Agent 1호 근거. 자동 전송·셀러센터 RPA는 초기 제외. 매뉴얼 기반 초안+사람 전송.",
+  "impl_difficulty_hint": 1,
+  "tags": ["cs", "board", "commerce", "pattern"]
+}

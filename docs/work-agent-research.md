@@ -226,3 +226,4 @@ Phase 6  (선택) CapNet Runtime 어댑터
 ## 9. 관련 파일
 
 - 기계용 디폴트 목록: [`default_tasks.json`](./default_tasks.json)
+- 공고 레퍼런스: [`refs/jobs/`](./refs/jobs/) · 목록 [`refs/jobs/index.json`](./refs/jobs/index.json)

@@ -1,0 +1,35 @@
+{
+  "id": "20260812-lifelab-remote-types",
+  "collected_at": "2026-08-12",
+  "source": {
+    "name": "lifelab365",
+    "url": "https://lifelab365.co.kr/remote-jobs-hourly-wage-guide/",
+    "accessed_at": "2026-08-12",
+    "note": "개별 채용공고가 아닌 재택알바 종류·시급 가이드. 시장 유형 레퍼런스."
+  },
+  "title": "재택알바 종류별 시급 가이드 (유형 레퍼런스)",
+  "remote": true,
+  "pay": "데이터입력·상담·설문·번역·콘텐츠 등 종류별 시급 밴드(가이드 수치)",
+  "duties": [
+    "데이터 입력: 엑셀·워드 정보 입력",
+    "고객 상담: 채팅·전화 문의 응대",
+    "설문 조사",
+    "번역",
+    "콘텐츠 작성"
+  ],
+  "requirements": [
+    "종류별 상이 (타자, 응대, 전문성 등)"
+  ],
+  "job_text": "2025 가이드 기준 재택알바 주요 종류: 데이터 입력(단순 반복), 고객 상담(채팅·전화, 매뉴얼), 설문, 번역, 콘텐츠 작성. 플랫폼으로 알바몬·잡코리아·크몽·크라우드웍스 등 언급.",
+  "mapped_task_ids": [
+    "data_entry",
+    "chat_reply",
+    "phone_assist",
+    "survey_label",
+    "translate",
+    "content_draft"
+  ],
+  "automation_notes": "entry/reply 우선순위의 시장 근거. 설문·라벨링은 AI 금지 공고와 충돌 가능.",
+  "impl_difficulty_hint": 1,
+  "tags": ["market", "types", "guide"]
+}

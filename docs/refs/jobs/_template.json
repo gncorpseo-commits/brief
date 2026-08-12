@@ -1,0 +1,19 @@
+{
+  "id": "YYYYMMDD-slug",
+  "collected_at": "2026-08-12",
+  "source": {
+    "name": "platform-or-site",
+    "url": "https://...",
+    "accessed_at": "2026-08-12"
+  },
+  "title": "",
+  "remote": true,
+  "pay": "",
+  "duties": [],
+  "requirements": [],
+  "job_text": "",
+  "mapped_task_ids": [],
+  "automation_notes": "",
+  "impl_difficulty_hint": 1,
+  "tags": []
+}

@@ -1,0 +1,55 @@
+{
+  "updated": "2026-08-12",
+  "count": 7,
+  "items": [
+    {
+      "id": "20260812-iboss-beauty-shorts",
+      "file": "20260812-iboss-beauty-shorts.json",
+      "title": "[재택알바] 뷰티 릴스/쇼츠 영상편집자",
+      "kind": "posting",
+      "tags": ["video", "shorts"]
+    },
+    {
+      "id": "20260812-filmmakers-shortform",
+      "file": "20260812-filmmakers-shortform.json",
+      "title": "유튜브·인스타그램 숏폼 편집자",
+      "kind": "posting",
+      "tags": ["video", "shorts"]
+    },
+    {
+      "id": "20260812-catchers-short-ads",
+      "file": "20260812-catchers-short-ads.json",
+      "title": "캐처스 숏폼 광고 편집·기획",
+      "kind": "posting",
+      "tags": ["video", "ads"]
+    },
+    {
+      "id": "20260812-classhub-shorts-edit",
+      "file": "20260812-classhub-shorts-edit.json",
+      "title": "클래스허브 숏츠 편집",
+      "kind": "posting",
+      "tags": ["video", "caption-script"]
+    },
+    {
+      "id": "20260812-albamon-remote-cs-pattern",
+      "file": "20260812-albamon-remote-cs-pattern.json",
+      "title": "알바몬 재택 CS·게시판 유형",
+      "kind": "pattern",
+      "tags": ["cs", "board"]
+    },
+    {
+      "id": "20260812-invione-overseas-chat",
+      "file": "20260812-invione-overseas-chat.json",
+      "title": "해외 채팅상담·구매대행",
+      "kind": "posting",
+      "tags": ["cs", "sheets", "ai-allowed"]
+    },
+    {
+      "id": "20260812-lifelab-remote-types",
+      "file": "20260812-lifelab-remote-types.json",
+      "title": "재택알바 종류 가이드",
+      "kind": "guide",
+      "tags": ["market"]
+    }
+  ]
+}

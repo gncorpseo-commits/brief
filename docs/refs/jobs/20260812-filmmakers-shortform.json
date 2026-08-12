@@ -1,0 +1,33 @@
+{
+  "id": "20260812-filmmakers-shortform",
+  "collected_at": "2026-08-12",
+  "source": {
+    "name": "filmmakers",
+    "url": "https://www.filmmakers.co.kr/proCrewRecruiting/27701094",
+    "accessed_at": "2026-08-12"
+  },
+  "title": "유튜브·인스타그램 숏폼 편집자 (재택/프리랜서)",
+  "remote": true,
+  "pay": "건당 약 24,000원 (공고 기준)",
+  "duties": [
+    "1분 내외 쇼츠/릴스 컷 편집",
+    "자막·효과음·배경음",
+    "인물 중심 편집, 초반 훅",
+    "제공: 원본·대본·레퍼런스"
+  ],
+  "requirements": [
+    "숏폼 이해도",
+    "센스 있는 자막(강조·디자인)",
+    "포트폴리오 링크"
+  ],
+  "job_text": "1분 내외 유튜브 쇼츠, 인스타그램 릴스. 컷 편집, 자막, 효과음, 배경음. 원본 영상·대본·레퍼런스 제공. 재택/프리랜서. 초반 3초 시선·자막 연출 중시.",
+  "mapped_task_ids": [
+    "video_short",
+    "video_caption",
+    "video_template",
+    "content_draft"
+  ],
+  "automation_notes": "대본→자막 타이밍은 caption Agent. 훅·연출은 assist+사람. content_draft는 자막 카피 보조.",
+  "impl_difficulty_hint": 4,
+  "tags": ["video", "shorts", "reels", "freelance"]
+}

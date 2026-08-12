@@ -1,0 +1,34 @@
+{
+  "id": "20260812-iboss-beauty-shorts",
+  "collected_at": "2026-08-12",
+  "source": {
+    "name": "i-boss",
+    "url": "https://www.i-boss.co.kr/ab-2795-6989",
+    "accessed_at": "2026-08-12"
+  },
+  "title": "[재택알바] 뷰티 릴스/쇼츠 영상편집자",
+  "remote": true,
+  "pay": "건당 약 10,000원 (30초 내외 기준), 익월 지급, 프리랜서 3.3%",
+  "duties": [
+    "인플루언서 촬영 숏폼 원본 편집",
+    "제공 레퍼런스와 동일한 스타일로 제작",
+    "주로 CapCut, 1분 미만 숏폼",
+    "요청 후 24시간 이내 완성본"
+  ],
+  "requirements": [
+    "주 10시간 이상",
+    "CapCut / Premiere 등 편집 툴",
+    "포트폴리오(숏폼 샘플) 제출",
+    "프리랜서 소득 신고 가능"
+  ],
+  "job_text": "주요 업무: 인플루언서가 촬영한 숏폼 원본 영상 편집. 제공되는 레퍼런스(참고 영상)와 동일한 스타일로 제작. 주로 캡컷(CapCut)을 사용하며, 1분 미만의 짧은 영상 제작. 급여 건당 10,000원(30초 내외). 100% 재택, 요청 시점으로부터 24시간 이내 완료.",
+  "mapped_task_ids": [
+    "video_short",
+    "video_caption",
+    "video_template",
+    "video_thumb"
+  ],
+  "automation_notes": "자막·템플릿 조립은 assist/semi 가능. 레퍼런스 톤 복제·바이럴 감각은 사람 검수. CapCut GUI 매크로보다 FFmpeg/자막 파이프라인 우선.",
+  "impl_difficulty_hint": 3,
+  "tags": ["video", "shorts", "capcut", "freelance"]
+}

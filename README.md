@@ -15,6 +15,7 @@
 |------|------|
 | [`docs/work-agent-research.md`](docs/work-agent-research.md) | 공고 유형 · 자동화 가능 여부 · **구현 난이도** |
 | [`docs/default_tasks.json`](docs/default_tasks.json) | 디폴트 자동화 작업 목록 (기계용) |
+| [`docs/refs/jobs/`](docs/refs/jobs/) | 수집 공고 레퍼런스 JSON (`index.json` 목록) |
 
 ## 구현 우선순위 (리서치 기준)
 
