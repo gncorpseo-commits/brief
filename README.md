@@ -1,24 +1,42 @@
 # Brief
 
-재택알바 **지원 → 채용 → 업무 자동화**를 위한 독립 Agent 생태계.  
-로컬 LLM에서 먼저 동작하고, 나중에 [CapNet](https://github.com/gncorpseo-commits/capnet) Runtime을 선택할 수 있다.
+재택알바 **지원 → 채용 → 업무 자동화** 로컬 우선 Agent.  
+포맷 정본: [`docs/refs/jobs/_template.json`](docs/refs/jobs/_template.json)  
+로드맵: [`docs/ROADMAP.md`](docs/ROADMAP.md) (Phase 0–6 MVP in-tree, CapNet은 7)
 
-## 현황
+## Quick start
 
-- Agent 이름: **`brief`** (지원 단계: 요약 · 적합도 · 초안)
-- 업무 Agent는 디폴트 작업 목록 + 사용자 추가 방식
-- CapNet 상용화 전: **LocalRuntime** 단독 사용
+```powershell
+cd C:\Users\wjsto\pjt\new
+pip install -e .
+brief demo
+brief version
+```
 
-## 문서
+Ollama가 있으면 자동 사용, 없으면 **휴리스틱 폴백**으로 동일 CLI가 동작합니다.
 
-| 파일 | 내용 |
-|------|------|
-| [`docs/work-agent-research.md`](docs/work-agent-research.md) | 공고 유형 · 자동화 가능 여부 · **구현 난이도** |
-| [`docs/default_tasks.json`](docs/default_tasks.json) | 디폴트 자동화 작업 목록 (기계용) |
-| [`docs/refs/jobs/`](docs/refs/jobs/) | 수집 공고 레퍼런스 JSON (`url` + 상세, `index.json`) |
-| [`docs/refs/jobs/ui/`](docs/refs/jobs/ui/) | 공고 JSON 뷰어 |
+```powershell
+# optional
+ollama pull qwen2.5:7b
+# .env 에 OLLAMA_MODEL=qwen2.5:7b
+```
 
-### 공고 레퍼런스 UI
+## CLI (Phase 매핑)
+
+| 명령 | Phase |
+|------|-------|
+| `brief structure <file> --url ...` | 1 JobRef |
+| `brief draft <job_id>` | 2 지원 초안 |
+| `brief apply <job_id> --yes` | 2 승인형 지원 |
+| `brief scout <file\|dir>` | 3 수집·필터 |
+| `brief jobs` / `status` / `bind` / `profile` | 4 오케스트레이션 |
+| `brief work chat_reply <file> --job-id ...` | 5 reply |
+| `brief work data_entry\|video_caption\|...` | 6 업무 확장 |
+| `brief demo` | 1–6 스모크 |
+
+지원 제출은 **`--yes` 건당 승인**만 가능합니다 (무인 대량·캡차 우회 없음).
+
+## 공고 레퍼런스 UI
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts/serve-job-refs.ps1
@@ -26,14 +44,15 @@ powershell -ExecutionPolicy Bypass -File scripts/serve-job-refs.ps1
 
 http://127.0.0.1:8765/ui/
 
-## 구현 우선순위 (리서치 기준)
+## 문서
 
-1. `reply` — 채팅·게시판 응대 초안  
-2. `entry` — 데이터 입력 / `caption` — 영상 자막  
-3. 썸네일 · FFmpeg 템플릿 · 주문 체크리스트  
+| 파일 | 내용 |
+|------|------|
+| [`docs/ROADMAP.md`](docs/ROADMAP.md) | Phase 0–7 |
+| [`docs/work-agent-research.md`](docs/work-agent-research.md) | 자동화·구현 난이도 |
+| [`docs/default_tasks.json`](docs/default_tasks.json) | 디폴트 작업 목록 |
+| [`docs/refs/jobs/`](docs/refs/jobs/) | 공고 레퍼런스 |
 
-전송·결제·업로드 자동 실행은 기본 제공하지 않는다 (`human_gate`).
+## CapNet
 
-## 라이선스
-
-정하기 전까지는 비공개 초안 문서로 둔다.
+상용화 후 같은 인터페이스에 CapNet Runtime을 Adapter로 연결 (Phase 7).

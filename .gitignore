@@ -17,9 +17,14 @@ __pycache__/
 
 # Data / models
 data/
+!data/samples/
 *.db
 *.safetensors
 *.gguf
+.env
+*.egg-info/
+build/
+.eggs/
 
 # Node
 node_modules/
