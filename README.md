@@ -15,7 +15,16 @@
 |------|------|
 | [`docs/work-agent-research.md`](docs/work-agent-research.md) | 공고 유형 · 자동화 가능 여부 · **구현 난이도** |
 | [`docs/default_tasks.json`](docs/default_tasks.json) | 디폴트 자동화 작업 목록 (기계용) |
-| [`docs/refs/jobs/`](docs/refs/jobs/) | 수집 공고 레퍼런스 JSON (`index.json` 목록) |
+| [`docs/refs/jobs/`](docs/refs/jobs/) | 수집 공고 레퍼런스 JSON (`url` + 상세, `index.json`) |
+| [`docs/refs/jobs/ui/`](docs/refs/jobs/ui/) | 공고 JSON 뷰어 |
+
+### 공고 레퍼런스 UI
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/serve-job-refs.ps1
+```
+
+http://127.0.0.1:8765/ui/
 
 ## 구현 우선순위 (리서치 기준)
 

@@ -1,35 +1,97 @@
 {
   "id": "20260812-albamon-remote-cs-pattern",
   "collected_at": "2026-08-12",
+  "url": "https://www.albamon.com/jobs/telecommuting",
   "source": {
     "name": "albamon",
     "url": "https://www.albamon.com/jobs/telecommuting",
     "accessed_at": "2026-08-12",
-    "note": "단일 공고가 아니라 재택 목록에 반복 노출된 CS·게시판형 유형 합성 레퍼런스."
+    "note": "단일 상세 공고가 아니라 재택 목록에서 반복되는 CS·주문·콘텐츠 유형 표본. 목록 총 약 700건대(수집 시점)."
   },
-  "title": "재택 CS / 쇼핑몰·쿠팡 게시판 상담 (유형 레퍼런스)",
+  "title": "알바몬 재택 — CS·주문·게시판·콘텐츠 유형 레퍼런스",
   "remote": true,
-  "pay": "시급·고정급·인센티브 혼재 (공고별)",
+  "pay": "월급 245~330만원대 CS / 건별·시급형 콘텐츠·시트 작업 혼재 (목록 표본)",
+  "schedule": "고정 교대(예: 09-18, 11-20, 13-22) 또는 시간협의",
+  "location": "재택 (일부 교육·거점 언급)",
+  "employment_type": "재택 알바·계약·프리랜서 혼재",
   "duties": [
-    "상품문의·게시판 고객문의 답변",
-    "주문·배송 확인 인바운드/안내",
-    "홈쇼핑·고객센터 주문접수(일부)",
-    "시간선택·바로재택 형태 다수"
+    "쿠팡/쇼핑몰 주문·접수·배송 확인 인바운드",
+    "이용문의·게시판·채팅 응대",
+    "구글시트 작업",
+    "바이럴 포스팅·숏폼 AI 영상제작(일부 건별)",
+    "블로그·과외 등 기타 재택"
   ],
   "requirements": [
-    "안정적 인터넷·PC",
-    "타이핑·응대 (공고별)",
-    "교육 후 투입 흔함"
+    "공고별 상이 (초보가능 표기 다수)",
+    "안정적 인터넷·PC (CS)"
   ],
-  "job_text": "알바몬 재택 목록에서 반복되는 유형: 쇼핑몰 게시판 관리, 쿠팡 상품문의 게시판 답변, 주문/배송 확인 인바운드, 홈쇼핑 고객센터 주문접수, TCK 쿠팡 게시판·전화상담 등. 텍스트 게시판 답변과 주문 상태 안내가 핵심.",
-  "mapped_task_ids": [
-    "board_manage",
-    "chat_reply",
-    "order_process",
-    "phone_assist",
-    "email_reply"
-  ],
-  "automation_notes": "reply Agent 1호 근거. 자동 전송·셀러센터 RPA는 초기 제외. 매뉴얼 기반 초안+사람 전송.",
+  "preferred": [],
+  "benefits": [],
+  "apply": {
+    "method": "알바몬 재택 목록에서 개별 공고 지원",
+    "url": "https://www.albamon.com/jobs/telecommuting",
+    "notes": "아래 listing_samples는 2026-08-12 목록 스냅샷. 개별 상세 URL은 목록에서 진입."
+  },
+  "details": {
+    "company": "(유형 합성 — TCK 쿠팡 고객센터, KS한국고용정보 쿠팡 인바운드 등)",
+    "summary": "재택 목록의 주력은 CS·주문접수. 보조로 시트·바이럴·숏폼 건별 공고가 섞임.",
+    "listing_samples": [
+      {
+        "title": "[재택/8H] 주문/접수 단순업무 — TCK 쿠팡 고객센터",
+        "pay": "월급 3,050,000원",
+        "hours": "13:00~22:00"
+      },
+      {
+        "title": "쿠팡 인바운드 (재택상담) — 11~20시",
+        "pay": "월급 2,500,000원",
+        "hours": "11:00~20:00"
+      },
+      {
+        "title": "쿠팡 이용문의 응대(8H) 초보가능",
+        "pay": "월급 2,650,000원",
+        "hours": "09:00~18:00"
+      },
+      {
+        "title": "[재택] 구글시트작업",
+        "pay": "건별 16,500원",
+        "hours": "시간협의"
+      },
+      {
+        "title": "여행 블로그",
+        "pay": "건별 15,000원",
+        "hours": "시간협의"
+      },
+      {
+        "title": "인스타·유튜브 숏폼 AI 영상제작 프리랜서",
+        "pay": "건당 50,000원",
+        "hours": "시간협의"
+      },
+      {
+        "title": "주문·배송 확인 인바운드 11~20시 쿠팡",
+        "pay": "월급 2,660,000원",
+        "hours": "11:00~20:00"
+      },
+      {
+        "title": "바이럴 포스팅 알바",
+        "pay": "건별 3,000원",
+        "hours": "시간협의"
+      },
+      {
+        "title": "정수기/인터넷 인바운드 영업 상담(채팅)",
+        "pay": "월급 3,300,000원",
+        "hours": "시간협의"
+      }
+    ],
+    "sections": [
+      {
+        "heading": "관찰",
+        "body": "물량 중심은 쿠팡·쇼핑몰 CS/주문. reply·order Agent 근거. 숏폼·바이럴은 건별 혼재."
+      }
+    ]
+  },
+  "job_text": "알바몬 재택 목록(telecommuting) 유형 레퍼런스 — 수집일 2026-08-12\n목록 URL: https://www.albamon.com/jobs/telecommuting\n(총 건수 약 700건대)\n\n반복 유형\n1) CS·주문\n- TCK 쿠팡 주문/접수 단순업무 (월급 ~305만, 13-22시)\n- 쿠팡 인바운드 상담 (11-20시, ~250만)\n- 이용문의 응대 초보가능 (09-18시)\n- 주문·배송 확인 인바운드\n- 채팅 인바운드 영업 상담\n\n2) 시트·콘텐츠\n- 구글시트 작업 (건별)\n- 여행 블로그 (건별)\n- 바이럴 포스팅 (건별 소액)\n- 숏폼 AI 영상제작 (건당 5만 표기 표본)\n\n매핑 시사점: board_manage/chat_reply/order_process/phone_assist 가 1순위. content_draft·video_* 는 2선.",
+  "mapped_task_ids": ["board_manage", "chat_reply", "order_process", "phone_assist", "email_reply", "data_entry", "content_draft", "video_short"],
+  "automation_notes": "reply Agent 1호 근거. 자동 전송·셀러센터 RPA 초기 제외.",
   "impl_difficulty_hint": 1,
-  "tags": ["cs", "board", "commerce", "pattern"]
+  "tags": ["cs", "board", "commerce", "pattern", "albamon"]
 }

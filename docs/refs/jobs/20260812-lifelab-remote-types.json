@@ -1,15 +1,19 @@
 {
   "id": "20260812-lifelab-remote-types",
   "collected_at": "2026-08-12",
+  "url": "https://lifelab365.co.kr/remote-jobs-hourly-wage-guide/",
   "source": {
     "name": "lifelab365",
     "url": "https://lifelab365.co.kr/remote-jobs-hourly-wage-guide/",
     "accessed_at": "2026-08-12",
-    "note": "개별 채용공고가 아닌 재택알바 종류·시급 가이드. 시장 유형 레퍼런스."
+    "note": "개별 채용공고가 아닌 재택알바 종류·시급 가이드 (2025-08-14 업데이트 표기)."
   },
-  "title": "재택알바 종류별 시급 가이드 (유형 레퍼런스)",
+  "title": "재택알바 종류별 시급 가이드 (시장 유형 레퍼런스)",
   "remote": true,
-  "pay": "데이터입력·상담·설문·번역·콘텐츠 등 종류별 시급 밴드(가이드 수치)",
+  "pay": "종류별 시급 밴드 (가이드 수치, 보장 아님)",
+  "schedule": "종류별 상이 (상담은 고정 시간대 선호 언급)",
+  "location": "재택",
+  "employment_type": "알바·프리랜서·부업 혼재 (가이드)",
   "duties": [
     "데이터 입력: 엑셀·워드 정보 입력",
     "고객 상담: 채팅·전화 문의 응대",
@@ -18,18 +22,73 @@
     "콘텐츠 작성"
   ],
   "requirements": [
-    "종류별 상이 (타자, 응대, 전문성 등)"
+    "데이터입력: 기본 PC, 타자 분당 40자+ 권장",
+    "상담: 응대·인내, 안정 인터넷·조용한 공간"
   ],
-  "job_text": "2025 가이드 기준 재택알바 주요 종류: 데이터 입력(단순 반복), 고객 상담(채팅·전화, 매뉴얼), 설문, 번역, 콘텐츠 작성. 플랫폼으로 알바몬·잡코리아·크몽·크라우드웍스 등 언급.",
-  "mapped_task_ids": [
-    "data_entry",
-    "chat_reply",
-    "phone_assist",
-    "survey_label",
-    "translate",
-    "content_draft"
-  ],
-  "automation_notes": "entry/reply 우선순위의 시장 근거. 설문·라벨링은 AI 금지 공고와 충돌 가능.",
+  "preferred": [],
+  "benefits": [],
+  "apply": {
+    "method": "가이드가 안내하는 플랫폼에서 개별 공고 지원",
+    "url": "https://lifelab365.co.kr/remote-jobs-hourly-wage-guide/",
+    "notes": "알바몬·잡코리아·크몽·위시켓·크라우드웍스 등 언급"
+  },
+  "details": {
+    "company": null,
+    "summary": "2025 재택알바 시장 동향·종류별 시급·신청 단계·사기 주의 안내 문서.",
+    "market_stats_cited": {
+      "demand_yoy": "+32%",
+      "weekend_yoy": "+45%",
+      "avg_wage_approx": "약 11,200원 내외"
+    },
+    "wage_bands": [
+      {
+        "type": "데이터 입력",
+        "wage": "약 10,030~12,000원",
+        "beginner": "매우 추천"
+      },
+      {
+        "type": "고객 상담",
+        "wage": "약 11,000~13,500원",
+        "beginner": "추천"
+      },
+      {
+        "type": "설문 조사",
+        "wage": "약 10,030~11,000원",
+        "beginner": "매우 추천"
+      },
+      {
+        "type": "번역",
+        "wage": "약 12,000~15,000원+",
+        "beginner": "보통"
+      },
+      {
+        "type": "콘텐츠 작성",
+        "wage": "약 13,000~18,000원+",
+        "beginner": "보통"
+      }
+    ],
+    "platforms_mentioned": ["알바몬", "알바천국", "잡코리아", "크몽", "위시켓", "긱톡", "크라우드웍스", "에이아이웍스", "워크넷"],
+    "scam_warnings": [
+      "면접 없이 즉시 합격",
+      "교육비·보증금 요구",
+      "과도한 시급",
+      "과도한 개인정보 요구",
+      "성급한 결정 압박"
+    ],
+    "sections": [
+      {
+        "heading": "데이터 입력",
+        "body": "엑셀·워드 단순 반복. 평균 시급 약 1.1만원. 정확성·집중력."
+      },
+      {
+        "heading": "고객 상담",
+        "body": "채팅·전화. 매뉴얼 적응. 고정 시간대(예: 11~15시) 선호 언급."
+      }
+    ]
+  },
+  "job_text": "재택알바 종류별 시급 완전정리 — 라이프랩365\nURL: https://lifelab365.co.kr/remote-jobs-hourly-wage-guide/\n업데이트 표기: 2025-08-14\n\n시장 (가이드 인용)\n- 재택알바 수요 +32%, 주말 +45%\n- 평균 시급 약 11,200원 내외\n\n종류별 시급 밴드\n- 데이터 입력: 10,030~12,000 / 초보 추천\n- 고객 상담: 11,000~13,500\n- 설문: 10,030~11,000\n- 번역: 12,000~15,000+\n- 콘텐츠: 13,000~18,000+\n\n상세\n1) 데이터 입력 — 엑셀·워드, 타자 40자+, 금융·공공 물량 언급\n2) 고객 상담 — 채팅·전화, 매뉴얼, 인터넷·조용한 공간, 고정 시간\n\n신청 단계: 공고 탐색 → 서류 → 화상면접 → 적응\n플랫폼: 알바몬·잡코리아·크몽·크라우드웍스 등\n주의: 교육비·보증금·과도시급·면접없이합격 등 사기 신호\n\n※ 가이드 문서이며 개별 채용 확정이 아님.",
+  "mapped_task_ids": ["data_entry", "chat_reply", "phone_assist", "survey_label", "translate", "content_draft"],
+  "automation_notes": "entry/reply 우선순위의 시장 근거. survey는 AI 금지 공고와 충돌 가능.",
   "impl_difficulty_hint": 1,
   "tags": ["market", "types", "guide"]
 }

@@ -1,6 +1,7 @@
 {
-  "id": "YYYYMMDD-slug",
+  "id": "",
   "collected_at": "2026-08-12",
+  "url": "https://...",
   "source": {
     "name": "platform-or-site",
     "url": "https://...",
@@ -9,8 +10,23 @@
   "title": "",
   "remote": true,
   "pay": "",
+  "schedule": "",
+  "location": "",
+  "employment_type": "",
   "duties": [],
   "requirements": [],
+  "preferred": [],
+  "benefits": [],
+  "apply": {
+    "method": "",
+    "url": "",
+    "notes": ""
+  },
+  "details": {
+    "company": "",
+    "summary": "",
+    "sections": []
+  },
   "job_text": "",
   "mapped_task_ids": [],
   "automation_notes": "",
